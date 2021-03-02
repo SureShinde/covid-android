@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/country_today_cases_content"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="@dimen/spacing_sixteen"
+    android:layout_marginBottom="@dimen/spacing_sixteen"
+    app:cardCornerRadius="@dimen/spacing_eight"
+    app:contentPaddingBottom="@dimen/spacing_twenty_eight"
+    app:contentPaddingLeft="@dimen/spacing_sixteen"
+    app:contentPaddingRight="@dimen/spacing_sixteen"
+    app:contentPaddingTop="@dimen/spacing_sixteen"
+    tools:parentTag="androidx.cardview.widget.CardView">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/today_cases_text_view"
+            style="@style/Country.TextView.Today"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toStartOf="@id/today_cases_text_view_date"
+            app:layout_constraintHorizontal_bias="0"
+            app:layout_constraintHorizontal_chainStyle="packed"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.doubleb.covid19.ui.view.LoadingTextView
+            android:id="@+id/today_cases_text_view_date"
+            style="@style/Country.TextView.Date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBaseline_toBaselineOf="@+id/today_cases_text_view"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/today_cases_text_view"
+            tools:text="(03/02/1955)" />
+
+        <TextView
+            android:id="@+id/today_cases_text_view_newest"
+            style="@style/Country.TextView.NewCases"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toStartOf="@id/today_cases_text_view_newest_results"
+            app:layout_constraintHorizontal_chainStyle="spread_inside"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/today_cases_text_view" />
+
+        <com.doubleb.covid19.ui.view.LoadingTextView
+            android:id="@+id/today_cases_text_view_newest_results"
+            style="@style/Country.TextView.NewResults"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBaseline_toBaselineOf="@id/today_cases_text_view_newest"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/today_cases_text_view_newest"
+            tools:text="80" />
+
+        <View
+            android:id="@+id/today_cases_divider"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/home_fragment_divider_max_height"
+            android:layout_marginTop="@dimen/spacing_ten"
+            android:background="@color/gray_light"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/today_cases_text_view_newest" />
+
+        <TextView
+            android:id="@+id/today_cases_text_view_newest_deaths"
+            style="@style/Country.TextView.NewDeaths"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toStartOf="@id/today_cases_text_view_newest_deaths_results"
+            app:layout_constraintHorizontal_chainStyle="spread_inside"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/today_cases_divider" />
+
+        <com.doubleb.covid19.ui.view.LoadingTextView
+            android:id="@+id/today_cases_text_view_newest_deaths_results"
+            style="@style/Country.TextView.NewResults"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBaseline_toBaselineOf="@id/today_cases_text_view_newest_deaths"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/today_cases_text_view_newest_deaths"
+            tools:text="80" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</merge>
