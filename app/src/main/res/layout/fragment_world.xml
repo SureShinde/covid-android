@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:animateLayoutChanges="true"
+    android:orientation="vertical"
+    tools:background="@drawable/shape_home_gradient">
+
+    <TextView
+        style="@style/World.TextView.Title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/spacing_sixteen"
+        android:layout_marginTop="@dimen/spacing_thirty_six"
+        android:layout_marginEnd="@dimen/spacing_sixteen" />
+
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/world_tab_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/spacing_sixteen"
+        android:layout_marginTop="@dimen/spacing_twenty_four"
+        android:layout_marginEnd="@dimen/spacing_sixteen"
+        android:background="@null"
+        app:tabBackground="@null"
+        app:tabIndicatorColor="@android:color/white"
+        app:tabSelectedTextColor="@android:color/white"
+        app:tabTextAppearance="@style/Care.TabLayout"
+        app:tabTextColor="@color/white_alpha" />
+
+    <androidx.viewpager2.widget.ViewPager2
+        android:id="@+id/world_view_pager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:overScrollMode="never"
+        android:visibility="gone" />
+</LinearLayout>

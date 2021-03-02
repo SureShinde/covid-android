@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    android:paddingTop="@dimen/spacing_twenty"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toBottomOf="@id/country_text_view_title"
+    tools:background="@drawable/shape_home_gradient">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:animateLayoutChanges="true"
+        android:paddingStart="@dimen/spacing_sixteen"
+        android:paddingTop="@dimen/spacing_sixteen"
+        android:paddingEnd="@dimen/spacing_sixteen"
+        android:paddingBottom="@dimen/home_bottom_spacing">
+
+        <androidx.constraintlayout.widget.Group
+            android:id="@+id/home_group"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            app:constraint_referenced_ids="home_text_view_title,
+            home_text_view_sub_title,
+            home_chart_card_view,
+            home_spread_chart_card_view,
+            home_today_cases_view,
+            home_rate_view" />
+
+        <TextView
+            android:id="@+id/home_text_view_title"
+            style="@style/Home.TextView.Title"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="@string/app_name" />
+
+        <com.doubleb.covid19.ui.view.LoadingTextView
+            android:id="@+id/home_text_view_sub_title"
+            style="@style/Home.TextView.Country"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/home_text_view_title"
+            app:layout_constrainedWidth="true"
+            tools:text="@string/country_name" />
+
+        <com.doubleb.covid19.ui.view.ChartCardView
+            android:id="@+id/home_chart_card_view"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/spacing_sixteen"
+            app:cardCornerRadius="@dimen/spacing_eight"
+            app:contentPadding="@dimen/spacing_twenty_four"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/home_text_view_sub_title" />
+
+        <com.doubleb.covid19.ui.view.RateView
+            android:id="@+id/home_rate_view"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/spacing_sixteen"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/home_chart_card_view" />
+
+        <com.doubleb.covid19.ui.view.SpreadCardView
+            android:id="@+id/home_spread_chart_card_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/spacing_sixteen"
+            app:cardCornerRadius="@dimen/spacing_eight"
+            app:contentPadding="@dimen/spacing_twenty_four"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/home_rate_view" />
+
+        <com.doubleb.covid19.ui.view.TodayCasesView
+            android:id="@+id/home_today_cases_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/spacing_sixteen"
+            android:layout_marginBottom="@dimen/spacing_sixteen"
+            app:cardCornerRadius="@dimen/spacing_eight"
+            app:contentPaddingBottom="@dimen/spacing_twenty_eight"
+            app:contentPaddingLeft="@dimen/spacing_sixteen"
+            app:contentPaddingRight="@dimen/spacing_sixteen"
+            app:contentPaddingTop="@dimen/spacing_sixteen"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/home_spread_chart_card_view" />
+
+        <com.doubleb.covid19.ui.view.ErrorView
+            android:id="@+id/home_error_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.core.widget.NestedScrollView>

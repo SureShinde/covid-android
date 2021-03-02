@@ -1,0 +1,114 @@
+// Top-level build file where you can add configuration options common to all sub-projects/modules.
+buildscript {
+    ext.kotlin_version = "1.3.61"
+    ext.google_services_version = "4.3.3"
+    ext.gradle_version = '4.0.0-beta03'
+    ext.crashlytics_version = "2.0.0-beta03"
+
+    repositories {
+        google()
+        jcenter()
+    }
+
+    dependencies {
+        classpath "com.android.tools.build:gradle:$gradle_version"
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+        classpath "com.google.gms:google-services:$google_services_version"
+        classpath "com.google.firebase:firebase-crashlytics-gradle:$crashlytics_version"
+
+        // NOTE: Do not place your application dependencies here; they belong
+        // in the individual module build.gradle files
+    }
+}
+
+allprojects {
+    repositories {
+        google()
+        jcenter()
+        maven { url 'https://jitpack.io' }
+    }
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}
+
+ext {
+    final kotlinVersion = '1.3.70'
+    final glideVersion = '4.11.0'
+    final firebaseVersion = '17.2.2'
+    final firebaseCrashlyticsVersion = '17.0.0-beta01'
+    final ktxVersion = '1.2.0'
+    final pagingLibraryVersion = '2.1.2'
+    final androidxVersion = '1.1.0'
+    final browserVersion = '1.2.0'
+    final constraintLayoutVersion = '2.0.0-beta4'
+    final fragmentVersion = '1.2.3'
+    final archComponentsVersion = '2.2.0'
+    final koinVersion = '2.1.4'
+    final retrofitVersion = '2.7.2'
+    final rxVersion = '3.0.0'
+    final loggingInterceptorVersion = '4.4.0'
+    final espressoVersion = '3.2.0'
+    final androidJunitVersion = '1.1.1'
+    final junitVersion = '4.12'
+    final mpchartVersion = 'v3.1.0'
+
+    androidDependencies = [
+            kotlin             : "org.jetbrains.kotlin:kotlin-stdlib:$kotlinVersion",
+
+            mpchart            : "com.github.PhilJay:MPAndroidChart:$mpchartVersion",
+
+            glide              : "com.github.bumptech.glide:glide:$glideVersion",
+
+            lifecycleAnnotation: "androidx.lifecycle:lifecycle-compiler:$archComponentsVersion",
+
+            firebaseAnalytics  : "com.google.firebase:firebase-analytics:$firebaseVersion",
+
+            firebaseCrashlytics: "com.google.firebase:firebase-crashlytics:$firebaseCrashlyticsVersion",
+
+            di                 : [
+                    "org.koin:koin-android:$koinVersion",
+                    "org.koin:koin-android-viewmodel:$koinVersion",
+                    "org.koin:koin-androidx-fragment:$koinVersion"
+            ],
+
+            materialDesign     : "com.google.android.material:material:$androidxVersion",
+
+            androidx           : [
+                    "androidx.appcompat:appcompat:$androidxVersion",
+                    "androidx.browser:browser:$browserVersion",
+                    "androidx.core:core-ktx:$ktxVersion",
+                    "androidx.constraintlayout:constraintlayout:$constraintLayoutVersion",
+                    "androidx.fragment:fragment-ktx:$fragmentVersion",
+                    "androidx.paging:paging-runtime:$pagingLibraryVersion"
+            ],
+
+            archComponents     : [
+                    "androidx.lifecycle:lifecycle-viewmodel-ktx:$archComponentsVersion",
+                    "androidx.lifecycle:lifecycle-livedata-ktx:$archComponentsVersion"
+            ],
+
+            httpClient         : [
+                    "com.squareup.retrofit2:retrofit:$retrofitVersion",
+                    "com.squareup.okhttp3:logging-interceptor:$loggingInterceptorVersion",
+                    "com.squareup.retrofit2:converter-gson:$retrofitVersion"
+            ],
+
+            rx                 : [
+                    "com.github.akarnokd:rxjava3-retrofit-adapter:$rxVersion",
+                    "io.reactivex.rxjava3:rxjava:$rxVersion",
+                    "io.reactivex.rxjava3:rxandroid:$rxVersion"
+            ],
+
+            unitTest           : [
+                    "junit:junit:$junitVersion"
+            ],
+
+            androidTest        : [
+                    "androidx.test.espresso:espresso-core:$espressoVersion",
+                    "androidx.test.ext:junit:$androidJunitVersion"
+            ]
+    ]
+
+}
